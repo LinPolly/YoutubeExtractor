@@ -85,7 +85,11 @@ namespace YoutubeExtractor
 
                 IEnumerable<VideoInfo> infos = GetVideoInfos(model).ToList();
 
-                string html5PlayerVersion = GetHtml5PlayerVersion(model.Microformat.PlayerMicroformatRenderer.Embed.IframeUrl);
+                string html5PlayerVersion = "";
+                if(model.Microformat.PlayerMicroformatRenderer.Embed.IframeUrl != null)
+                {
+                     GetHtml5PlayerVersion(model.Microformat.PlayerMicroformatRenderer.Embed.IframeUrl);
+                }
 
                 foreach (VideoInfo videoInfo in infos)
                 {
