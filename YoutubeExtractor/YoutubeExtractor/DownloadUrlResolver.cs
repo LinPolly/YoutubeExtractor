@@ -175,7 +175,7 @@ namespace YoutubeExtractor
 
         private static List<Format> GetStreamMap(YoutubeModel model)
         {
-            return model.StreamingData.Formats.ToList();
+            return model.StreamingData.Formats.ToList(); //getting exception
         }
 
         private static IEnumerable<VideoInfo> GetVideoInfos(YoutubeModel model)
